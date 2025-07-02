@@ -1,0 +1,277 @@
+/* Mevcut CSS'n */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+  min-height: 100vh;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+.overall-layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Başlıkları hizalamak için flex-start */
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.app-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  flex: 0 0 auto;
+  width: 320px;
+  max-width: 100%;
+}
+
+.app-container h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 70%;
+  border: 2px solid #2980b9;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #6dd5fa;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #6dd5fa;
+  transform: scale(1.05);
+}
+
+.weather-info {
+  margin-top: 30px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+}
+
+.weather-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.weather-info h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+/* Accordion */
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  width: 100%;
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #6dd5fa;
+  color: #000;
+}
+
+.accordion-content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 1000px;
+  transition: max-height 0.3s ease;
+}
+
+/* Tahmin saatlik kartları */
+.forecast-hour {
+  flex: 1 1 120px;
+  background-color: rgba(41, 128, 185, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forecast-hour:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+/* Harita ve Grafik Konteynerları */
+.map-container,
+.chart-container { /* İkisini birleştirdim */
+  flex: 0 0 300px;
+  max-width: 300px;
+  min-height: 380px; /* App-container ile hizalamak için yüksekliği ayarla */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* Kendi içindeki öğeleri yatayda ortala */
+  position: relative;
+}
+
+.map-container h3,
+.chart-container h3 { /* İkisini birleştirdim */
+  color: #333;
+  margin-top: 0;
+  padding-top: 25px; /* Başlıkların üstten boşluğu */
+  margin-bottom: 10px;
+  font-size: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Metni kendi içinde ortala */
+  /* margin-left: -5px; */ /* Bu satırı kaldırdım, flex ile ortalamaya çalışacağız */
+}
+
+/* Arama konteyneri */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive için medya sorgusu */
+@media (max-width: 992px) {
+  .overall-layout-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .map-container,
+  .app-container,
+  .chart-container {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin: 0;
+    min-height: auto;
+  }
+
+  .app-container {
+    padding: 30px 30px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-container input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .search-container button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .map-container h3,
+  .chart-container h3 {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overall-layout-container {
+    padding: 10px;
+    gap: 15px;
+  }
+  .app-container {
+    padding: 20px 20px;
+    width: 95%;
+  }
+
+  .weather-info h2 {
+    font-size: 20px;
+  }
+
+  .weather-info {
+    font-size: 14px;
+  }
+
+  .map-container,
+  .chart-container {
+    max-width: 100%;
+  }
+}
+
+.loading {
+  margin-top: 20px;
+  font-size: 10px;
+  color: #2980b9;
+  font-weight: bold;
+  animation: pulse 1s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* YENİ EKLENDİ: Hata mesajı stili */
+.error-message {
+  color: #c0392b; /* Kırmızı renk */
+  background-color: #fce4e4; /* Açık kırmızı arka plan */
+  border: 1px solid #c0392b;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out; /* Hafif bir giriş animasyonu */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
