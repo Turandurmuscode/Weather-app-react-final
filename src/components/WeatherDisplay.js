@@ -1,7 +1,7 @@
 // src/components/WeatherDisplay.js
 import React from 'react';
 import '../app.css';
-import { getEmojiForWeather, convertUnixToTime } from '../utils'; et
+import { getEmojiForWeather, convertUnixToTime } from '../utils';
 
 const WeatherDisplay = ({ weatherData }) => {
   if (!weatherData) {
