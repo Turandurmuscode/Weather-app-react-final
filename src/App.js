@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
 import ForecastDisplay from './components/ForecastDisplay';
-import MapComponent from './components/MapComponent'; // <-- BU SATIR AÇIK OLMALI
-import ChartComponent from './components/ChartComponent'; // <-- BU SATIR AÇIK OLMALI
+import MapComponent from './components/MapComponent'; 
+import ChartComponent from './components/ChartComponent'; 
 import './app.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [activeDay, setActiveDay] = useState(null);
-  const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY; // API anahtarını buraya ekle
+  const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY; 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -121,10 +121,10 @@ function App() {
 
   return (
     <div className="overall-layout-container">
-      {/* Sol: Harita Konteyneri - ŞİMDİ BU AÇIK KALACAK */}
+      {}
       {weather && <MapComponent weatherData={weather} />}
 
-      {/* Orta: Ana Uygulama Konteyneri (açık renkli arka plan) */}
+      {}
       <div className="app-container">
         <h1>Weather App</h1>
         {loading && <p className='loading'>Yükleniyor...</p>}
@@ -147,7 +147,7 @@ function App() {
         )}
       </div>
 
-      {/* Sağ: Grafik Konteyneri - BU ZATEN AÇIKTI, ŞİMDİ SABİT BOYUTLU ÇALIŞIYOR */}
+      {}
       {forecast && <ChartComponent forecast={forecast} />}
     </div>
   );

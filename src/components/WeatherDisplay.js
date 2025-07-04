@@ -1,15 +1,15 @@
 // src/components/WeatherDisplay.js
 import React from 'react';
 import '../app.css';
-import { getEmojiForWeather, convertUnixToTime } from '../utils'; // Fonksiyonları utils'den import et
+import { getEmojiForWeather, convertUnixToTime } from '../utils'; et
 
 const WeatherDisplay = ({ weatherData }) => {
   if (!weatherData) {
-    return null; // weatherData yoksa bir şey gösterme
+    return null; 
   }
 
   return (
-    <> {/* Birden fazla elementi sarmalamak için React Fragment kullanıyoruz */}
+    <> {}
       <div className="weather-info">
         <h2>{weatherData.name}</h2>
         <p> Hissedilen: {weatherData.main.feels_like}°C</p>
@@ -21,7 +21,7 @@ const WeatherDisplay = ({ weatherData }) => {
         <p>Gün Batımı: {convertUnixToTime(weatherData.sys.sunset)}</p>
       </div>
 
-      {/* Emoji tavsiyesi */}
+      {}
       <div style={{ marginTop: '20px', fontStyle: 'italic' }}>
         {(() => {
           const desc = weatherData.weather[0].description.toLowerCase();
@@ -29,7 +29,7 @@ const WeatherDisplay = ({ weatherData }) => {
           if (desc.includes('güneş') || desc.includes('açık')) return 'Bugün hava açık ve güneşli';
           if (desc.includes('kar')) return 'Düşük sıcaklıklar bekleniyor.';
           if (desc.includes('bulut')) return 'Bugün hava parçalı bulutlu.☁️';
-          return 'Havayı kontrol ettin, harikasın! 👍';
+          return 'Havayı kontrol ettin, harikasın!';
         })()}
       </div>
     </>

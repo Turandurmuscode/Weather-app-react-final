@@ -1,24 +1,22 @@
 // src/components/ChartComponent.js
-import React, { useState, useEffect } from 'react'; // <-- useState ve useEffect ekledik
+import React, { useState, useEffect } from 'react'; 
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import '../app.css';
 import { getDailyAverages } from '../utils';
 
 const ChartComponent = ({ forecast }) => {
-  const [chartReady, setChartReady] = useState(false); // <-- Yeni state
+  const [chartReady, setChartReady] = useState(false); 
 
   useEffect(() => {
-    // Küçük bir gecikme ekleyerek, DOM'un tamamen yerleştiğinden emin olmaya çalışıyoruz
-    // Bu, ResponsiveContainer'ın bazen yaşadığı ilk render boyutlandırma sorunlarını çözebilir.
     const timer = setTimeout(() => {
       setChartReady(true);
-    }, 100); // 100ms gecikme
+    }, 100); 
 
-    return () => clearTimeout(timer); // Bileşen unmount olduğunda timer'ı temizle
+    return () => clearTimeout(timer); 
   }, []);
 
   if (!forecast) {
-    return null; // forecast verisi yoksa grafik gösterme
+    return null; 
   }
 
   const data = getDailyAverages(forecast.list);
@@ -35,7 +33,7 @@ const ChartComponent = ({ forecast }) => {
   return (
     <div className="chart-container">
       <h3>Günlük Ortalama Sıcaklık Grafiği</h3>
-      {chartReady ? ( // <-- chartReady true olduğunda render et
+      {chartReady ? ( 
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid stroke="#ccc" />

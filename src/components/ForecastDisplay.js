@@ -1,11 +1,11 @@
 // src/components/ForecastDisplay.js
 import React from 'react';
-import '../app.css'; // app.css'teki stilleri kullanmak için import et
-import { convertDtTxtToDate, groupForecastByDay, getEmojiForWeather } from '../utils'; // getEmojiForWeather'ı ekledik; // Fonksiyonları utils'den import et
+import '../app.css'; 
+import { convertDtTxtToDate, groupForecastByDay, getEmojiForWeather } from '../utils'; 
 
 const ForecastDisplay = ({ forecast, activeDay, setActiveDay }) => {
   if (!forecast) {
-    return null; // forecast verisi yoksa bir şey gösterme
+    return null; 
   }
 
   return (

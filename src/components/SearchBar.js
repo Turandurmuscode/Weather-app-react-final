@@ -1,6 +1,6 @@
 // src/components/SearchBar.js
 import React from 'react';
-import '../app.css'; // app.css'teki stilleri kullanmak için import et
+import '../app.css';
 
 const SearchBar = ({ city, onInputChange, onSearch, onKeyPress }) => {
   return (

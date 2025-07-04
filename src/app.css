@@ -1,47 +1,47 @@
-/* Orijinal app.css'in üzerine sadece renk ve font değişiklikleri uygulanmıştır. */
+
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif; /* Ana metinler için Open Sans */
+  font-family: 'Open Sans', sans-serif; 
   
-  /* Sofistike Koyu Tema Arka Plan */
-  background: linear-gradient(to right, #2c3e50, #34495e); /* Koyu gri-mavi tonlarında zarif bir geçiş */
+
+  background: linear-gradient(to right, #2c3e50, #34495e); 
   
   min-height: 100vh;
   padding-top: 50px;
   box-sizing: border-box;
-  color: #ecf0f1; /* Genel metin rengi açık gri */
+  color: #ecf0f1; 
 
-  /* YENİ: Özel Kaydırma Çubuğu Stili - Webkit Tarayıcılar İçin */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #3498db #2c3e50; /* Firefox */
+  
+  scrollbar-width: thin; 
+  scrollbar-color: #3498db #2c3e50; 
 }
 
-/* YENİ: Kaydırma Çubuğu Detayları - Webkit Tarayıcılar İçin */
+
 body::-webkit-scrollbar {
   width: 10px;
 }
 body::-webkit-scrollbar-track {
-  background: #2c3e50; /* Kaydırma çubuğu arka planı */
+  background: #2c3e50; 
   border-radius: 10px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #3498db; /* Kaydırma çubuğu rengi (vurgu rengi) */
+  background-color: #3498db; 
   border-radius: 10px;
-  border: 2px solid #2c3e50; /* Çubuk etrafında boşluk */
+  border: 2px solid #2c3e50; 
 }
 
 
-/* Başlıklar için Montserrat fontu ve koyu tema rengi */
+
 h1, h2, h3, .accordion-header, .chart-container h3, .map-container h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Daha kalın bir görünüm */
-  color: #ecf0f1; /* Başlıklar açık gri olacak */
+  font-weight: 700; 
+  color: #ecf0f1; 
 }
 
 .overall-layout-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Başlıkları hizalamak için flex-start */
+  align-items: flex-start; 
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
@@ -52,133 +52,132 @@ h1, h2, h3, .accordion-header, .chart-container h3, .map-container h3 {
 }
 
 .app-container {
-  background-color: rgba(44, 62, 80, 0.9); /* Koyu tema ile uyumlu yarı şeffaf koyu gri */
+  background-color: rgba(44, 62, 80, 0.9); 
   padding: 40px 60px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Daha belirgin ve yumuşak gölge */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
   text-align: center;
   flex: 0 0 auto;
   width: 320px;
   max-width: 100%;
-  border: 1px solid rgba(236, 240, 241, 0.1); /* Hafif bir çerçeve */
+  border: 1px solid rgba(236, 240, 241, 0.1); 
 }
 
-/* Arama Çubuğu Stilleri */
+
 .search-container {
   display: flex;
-  gap: 10px; /* Elemanlar arası boşluk */
-  margin-bottom: 25px; /* Alt boşluk artırıldı */
+  gap: 10px; 
+  margin-bottom: 25px; 
   justify-content: center;
   align-items: center;
 }
 
 .search-container input {
-  padding: 12px 18px; /* Daha dolgun input */
-  border: 1px solid #34495e; /* Koyu temaya uygun çerçeve */
-  border-radius: 8px; /* Hafif yuvarlak köşeler */
+  padding: 12px 18px; 
+  border: 1px solid #34495e; 
+  border-radius: 8px; 
   font-size: 16px;
   outline: none;
   width: 200px;
-  background-color: #34495e; /* Koyu input arka planı */
-  color: #ecf0f1; /* Açık renkli metin */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Yumuşak geçişler */
+  background-color: #34495e; 
+  color: #ecf0f1; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .search-container input::placeholder {
-  color: #bdc3c7; /* Placeholder rengi */
+  color: #bdc3c7; 
 }
 
 .search-container input:focus {
-  border-color: #3498db; /* Focus olduğunda canlı mavi çerçeve */
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3); /* Hafif parlak gölge */
+  border-color: #3498db; 
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3); 
 }
 
 .search-container button {
-  padding: 12px 25px; /* Daha dolgun buton */
-  background-color: #3498db; /* Canlı mavi buton rengi */
+  padding: 12px 25px; 
+  background-color: #3498db; 
   color: white;
   border: none;
-  border-radius: 8px; /* Hafif yuvarlak köşeler */
+  border-radius: 8px; 
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* YENİ: Box-shadow geçişi eklendi */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
 }
 
 .search-container button:hover {
-  background-color: #2980b9; /* Hover'da koyulaşan mavi */
-  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+  background-color: #2980b9; 
+  transform: translateY(-2px); 
 }
 
-/* YENİ: Buton odaklanma (focus) stili */
+
 .search-container button:focus {
-  outline: none; /* Varsayılan outline'ı kaldır */
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Canlı mavi halka */
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); 
 }
 
 
-/* Hava Durumu Bilgisi Alanı */
+
 .weather-info {
   margin-top: 20px;
-  padding: 20px; /* Genel padding korundu */
-  background-color: rgba(52, 73, 94, 0.7); /* Koyu gri, hafif şeffaf */
+  padding: 20px; 
+  background-color: rgba(52, 73, 94, 0.7); 
   border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* İçeriden hafif gölge */
-  color: #ecf0f1; /* Metin rengi */
-}
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
+  color: #ecf0f1; }
 
 .weather-info h2 {
   margin-bottom: 15px;
-  font-size: 28px; /* Başlık boyutu */
+  font-size: 28px; 
   color: #ecf0f1;
 }
 
 .weather-info p {
   margin: 8px 0;
-  padding-bottom: 8px; /* Ayırıcıdan önce boşluk */
+  padding-bottom: 8px; 
   font-size: 17px;
   line-height: 1.4;
-  color: #bdc3c7; /* Daha yumuşak bir gri tonu */
+  color: #bdc3c7; 
   border-bottom: 1px solid rgba(236, 240, 241, 0.1);
 }
 
-/* Son paragraf için alt çerçeveyi kaldır */
+
 .weather-info p:last-of-type {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-/* Hava durumu açıklama satırı için özel stil */
-.weather-info p:nth-child(3) { /* "Hava:" satırını hedefliyoruz (Hissedilen, Hava, Sıcaklık) */
-  font-weight: 600; /* Daha kalın */
-  color: #ecf0f1; /* Daha parlak metin */
-  font-size: 18px; /* Biraz daha büyük */
+
+.weather-info p:nth-child(3) { 
+  font-weight: 600;
+  color: #ecf0f1; 
+  font-size: 18px; 
 }
 
-/* Mevcut sıcaklık değeri için stil - NEON ETKİSİ KALDIRILDI */
+
 .current-temp {
-  font-size: 20px; /* Daha da büyütüldü */
-  font-weight: 700; /* Ekstra kalın */
-  color: #ecf0f1; /* Ana açık metin rengi, daha temiz bir görünüm */
-  margin-left: 5px; /* Değer ile "Sıcaklık:" metni arası boşluk */
+  font-size: 20px; 
+  font-weight: 700; 
+  color: #ecf0f1; 
+  margin-left: 5px; 
 }
 
 
-/* Yükleniyor ve Hata Mesajları */
+
 .loading, .error-message {
-  color: #e74c3c; /* Kırmızı hata mesajı */
+  color: #e74c3c; 
   font-weight: bold;
   margin-top: 20px;
   font-size: 18px;
 }
 .loading {
-  color: #f39c12; /* Yükleniyor için turuncu */
+  color: #f39c12; 
 }
 
-/* Tahmin Görüntüleme */
+
 .forecast-info {
   margin-top: 30px;
   padding: 20px;
-  background-color: rgba(52, 73, 94, 0.7); /* Koyu gri, hafif şeffaf */
+  background-color: rgba(52, 73, 94, 0.7); 
   border-radius: 12px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -191,32 +190,31 @@ h1, h2, h3, .accordion-header, .chart-container h3, .map-container h3 {
 
 .accordion-item {
   margin-bottom: 10px;
-  background-color: #34495e; /* Akordeon öğelerinin arka planı */
+  background-color: #34495e; 
   border-radius: 8px;
-  overflow: hidden; /* İçerik taşmasını engelle */
+  overflow: hidden; 
 }
 
 .accordion-header {
   width: 100%;
   padding: 15px 20px;
-  background-color: #34495e; /* Koyu mavi/gri */
+  background-color: #34495e; 
   color: #ecf0f1;
   border: none;
   text-align: left;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  border-bottom: 1px solid rgba(236, 240, 241, 0.05); /* Ayırıcı çizgi */
+  border-bottom: 1px solid rgba(236, 240, 241, 0.05); 
   transition: background-color 0.3s ease;
 }
 
 .accordion-header:hover {
-  background-color: #2c3e50; /* Hover'da daha koyu */
-}
+  background-color: #2c3e50; }
 
 .accordion-content {
   padding: 15px 20px;
-  background-color: #2c3e50; /* İçerik için daha koyu arka plan */
+  background-color: #2c3e50; 
   color: #bdc3c7;
   border-top: 1px solid rgba(236, 240, 241, 0.05);
 }
@@ -226,29 +224,27 @@ h1, h2, h3, .accordion-header, .chart-container h3, .map-container h3 {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dotted rgba(236, 240, 241, 0.1); /* Noktalı ayırıcı */
-  transition: background-color 0.2s ease; /* Hover efekti için geçiş */
+  border-bottom: 1px dotted rgba(236, 240, 241, 0.1); 
+  transition: background-color 0.2s ease; 
 }
 
-/* Tahmin saatlik öğeleri hover efekti */
+
 .forecast-hour:hover {
-  background-color: rgba(52, 152, 219, 0.1); /* Mavi vurgu renginin şeffaf hali */
-  border-radius: 4px; /* Hafif yuvarlak köşeler */
+  background-color: rgba(52, 152, 219, 0.1); 
+  border-radius: 4px; 
 }
 
-/* YENİ: Tek ve çift tahmin saatleri için farklı arka plan renkleri */
+
 .forecast-hour:nth-child(odd) {
-  background-color: rgba(44, 62, 80, 0.05); /* Çok hafif bir koyuluk */
+  background-color: rgba(44, 62, 80, 0.05); 
 }
 
 .forecast-hour:nth-child(even) {
-  background-color: rgba(44, 62, 80, 0.15); /* Hafif daha koyu bir ton */
-}
+  background-color: rgba(44, 62, 80, 0.15); }
 
 
 .forecast-hour:last-child {
-  border-bottom: none; /* Son öğede ayırıcı olmasın */
-}
+  border-bottom: none; }
 
 .forecast-hour p {
   margin: 0;
@@ -257,74 +253,73 @@ h1, h2, h3, .accordion-header, .chart-container h3, .map-container h3 {
 }
 
 
-/* Harita Konteyneri */
+
 .map-container {
-  background-color: rgba(44, 62, 80, 0.9); /* Koyu temaya uygun arka plan */
+  background-color: rgba(44, 62, 80, 0.9); 
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   text-align: center;
-  flex: 1; /* Esnek boyutlandırma */
+  flex: 1; 
   min-width: 300px;
-  max-width: 380px; /* Genişliği sabitledim, bu önceki kodunda da vardı */
+  max-width: 380px; 
   box-sizing: border-box;
-  display: flex; /* İçerik dikey ortalama için */
+  display: flex; 
   flex-direction: column;
-  justify-content: flex-start; /* Başlık üste hizalı kalsın */
+  justify-content: flex-start; 
   align-items: center;
   border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .map-container h3 {
-  margin-bottom: 15px; /* Harita başlığı ile harita arası boşluk */
-  font-size: 24px;
+  margin-bottom: 15px; 
   color: #ecf0f1;
 }
 
-/* Grafik Konteyneri */
+
 .chart-container {
-  background-color: rgba(44, 62, 80, 0.9); /* Koyu temaya uygun arka plan */
+  background-color: rgba(44, 62, 80, 0.9); 
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   text-align: center;
-  flex: 1; /* Esnek boyutlandırma */
+  flex: 1; 
   min-width: 300px;
-  max-width: 380px; /* Genişliği sabitledim, bu önceki kodunda da vardı */
+  max-width: 380px; 
   box-sizing: border-box;
-  display: flex; /* İçerik dikey ortalama için */
+  display: flex; 
   flex-direction: column;
-  justify-content: flex-start; /* Başlık üste hizalı kalsın */
+  justify-content: flex-start; 
   align-items: center;
   border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .chart-container h3 {
-  margin-bottom: 15px; /* Grafik başlığı ile grafik arası boşluk */
+  margin-bottom: 15px; 
   font-size: 24px;
   color: #ecf0f1;
 }
 
-/* Grafik çizgi rengini de güncelleyelim */
+
 .recharts-wrapper .recharts-line-chart .recharts-line {
-    stroke: #3498db; /* Çizgi rengi ana vurgu rengiyle aynı */
+    stroke: #3498db; 
 }
-/* Grid çizgilerinin rengi */
+
 .recharts-wrapper .recharts-cartesian-grid line {
-    stroke: rgba(236, 240, 241, 0.15); /* Izgara çizgileri daha şeffaf ve açık gri */
+    stroke: rgba(236, 240, 241, 0.15); 
 }
-/* Eksen yazıları */
+
 .recharts-wrapper .recharts-cartesian-axis-tick-value {
     fill: #bdc3c7; /* Eksen yazıları açık gri */
 }
 
-/* Genel metinler için renk ayarı */
+
 p, span {
   color: #bdc3c7;
 }
 
 
-/* Küçük cihazlar için Responsive Tasarım (Orijinal ayarlar korundu) */
+
 @media (max-width: 768px) {
   .overall-layout-container {
     padding: 0 10px;
