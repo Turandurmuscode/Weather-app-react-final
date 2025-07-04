@@ -14,7 +14,7 @@ const WeatherDisplay = ({ weatherData }) => {
         <h2>{weatherData.name}</h2>
         <p> Hissedilen: {weatherData.main.feels_like}°C</p>
         <p>Hava: {weatherData.weather[0].description} {getEmojiForWeather(weatherData.weather[0].description)}</p>
-        <p>Sıcaklık: {weatherData.main.temp}°C</p>
+        <p>Sıcaklık: <span className="current-temp">{weatherData.main.temp}°C</span></p>
         <p>Nem: {weatherData.main.humidity}%</p>
         <p>Rüzgar Hızı: {weatherData.wind.speed} m/s</p>
         <p>Gün Doğumu: {convertUnixToTime(weatherData.sys.sunrise)}</p>

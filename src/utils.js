@@ -3,15 +3,51 @@
 // Hava durumu açıklamalarına göre emoji döndüren fonksiyon
 export const getEmojiForWeather = (description) => {
   const lower = description.toLowerCase();
-  if (lower.includes('açık')) return '☀️';
-  if (lower.includes('bulut')) return '☁️';
-  if (lower.includes('yağmur') || lower.includes('çiseleyen')) return '🌧️';
-  if (lower.includes('kar')) return '❄️';
-  if (lower.includes('sis') || lower.includes('pus')) return '🌫️';
-  if (lower.includes('fırtına') || lower.includes('gök gürültülü')) return '🌩️';
-  if (lower.includes('duman') || lower.includes('kum') || lower.includes('toz') || lower.includes('volkanik kül')) return '💨';
-  if (lower.includes('hortum')) return '🌪️';
-  return '🌈'; // Varsayılan veya bilinmeyen durumlar için
+
+  // Açık ve güneşli hava
+  if (lower.includes('açık') || lower.includes('açık')) return '☀️';
+
+  // Bulutlu hava çeşitleri
+  if (lower.includes('az bulutlu') || lower.includes('az bulutlu')) return '🌤️';
+  if (lower.includes('parçalı bulutlu') || lower.includes('parçalı bulutlu')) return '⛅';
+  if (lower.includes('kırık bulutlu') || lower.includes('kırık bulutlu')) return '☁️';
+  if (lower.includes('kapalı') || lower.includes('kapalı')) return  '☁️'; // Kapalı ve yoğun bulutlu
+
+  // Yağışlı hava çeşitleri
+  if (lower.includes('hafif yağmur') || lower.includes('hafif yağmur')) return '🌧️';
+  if (lower.includes('orta şiddetli yağmur') || lower.includes('orta şiddetli yağmur')) return '🌧️';
+  if (lower.includes('şiddetli yağmur') || lower.includes('şiddetli yağmur')) return '☔';
+  if (lower.includes('çok şiddetli yağmur') || lower.includes('çok şiddetli yağış')) return '☔';
+  if (lower.includes('aşırı yağmur') || lower.includes('aşırı yağış')) return ' ☔';
+  if (lower.includes('çiseleyen yağmur') || lower.includes('çiseleyen yağış')) return '🌦️';
+  if (lower.includes('sağanak yağmur') || lower.includes('sağanak yağış')) return '  驟雨'; // Sağanak yağmur için özel
+  if (lower.includes('yağmur')) return '🌧️'; // Genel yağmur
+
+  // Kar ve buz
+  if (lower.includes('hafif kar') || lower.includes('hafif kar')) return '🌨️';
+  if (lower.includes('kar') || lower.includes('kar yağışı')) return '❄️';
+  if (lower.includes('yoğun kar') || lower.includes('yoğun kar yağışı')) return ' 🌨️';
+  if (lower.includes('dolu') || lower.includes('dolu beklentisi')) return '🧊'; // Dolu veya buzlu kar
+  if (lower.includes('buz') || lower.includes('don tehlikesi')) return '🧊';
+
+  // Fırtına çeşitleri
+  if (lower.includes('fırtına') || lower.includes('fırtınalı')) return '🌩️';
+  if (lower.includes('gök gürültülü') || lower.includes('gök gürültülü yağış')) return '⛈️'; // Yağmurlu fırtına
+  if (lower.includes('tayfun') || lower.includes('tayfun riski')) return '🌪️';
+  if (lower.includes('kasırga') || lower.includes('kasırga riski')) return '🌀';
+
+  // Atmosferik olaylar
+  if (lower.includes('sis') || lower.includes('sisli') || lower.includes('sisli')) return '🌫️';
+  if (lower.includes('pus') || lower.includes('puslu')) return '🌫️'; // Puslu
+  if (lower.includes('duman') || lower.includes('dumanlı')) return '💨';
+  if (lower.includes('kum') || lower.includes('kum fırtınası')) return '🏜️'; // Kum fırtınası gibi
+  if (lower.includes('toz') || lower.includes('toz')) return '💨';
+  if (lower.includes('volkanik kül') || lower.includes('volkanik kül')) return '🌋';
+  if (lower.includes('hortum') || lower.includes('hortum riski')) return '🌪️';
+  if (lower.includes('bora') || lower.includes('bora')) return '💨'; // Bora (şiddetli rüzgar)
+
+  // Diğer veya bilinmeyen durumlar
+  return '❓'; // Hiçbirine uymazsa varsayılan soru işareti
 };
 
 // Unix zaman damgasını yerel saate çeviren fonksiyon

@@ -36,7 +36,7 @@ const MapComponent = ({ weatherData }) => {
       <MapContainer
         center={position}
         zoom={10}
-        scrollWheelZoom={false} // Kaydırma tekerleğiyle zoom'u kapat
+        scrollWheelZoom={true} // Kaydırma tekerleğiyle zoom'u kapat
         style={{ height: '300px', width: '300px', borderRadius: '10px' }}
       >
         <TileLayer

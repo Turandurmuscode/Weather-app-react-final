@@ -1,7 +1,7 @@
 // src/components/ForecastDisplay.js
 import React from 'react';
 import '../app.css'; // app.css'teki stilleri kullanmak için import et
-import { convertDtTxtToDate, groupForecastByDay } from '../utils'; // Fonksiyonları utils'den import et
+import { convertDtTxtToDate, groupForecastByDay, getEmojiForWeather } from '../utils'; // getEmojiForWeather'ı ekledik; // Fonksiyonları utils'den import et
 
 const ForecastDisplay = ({ forecast, activeDay, setActiveDay }) => {
   if (!forecast) {
@@ -29,7 +29,7 @@ const ForecastDisplay = ({ forecast, activeDay, setActiveDay }) => {
                 <div className="forecast-hour" key={index}>
                   <p>{convertDtTxtToDate(item.dt_txt)}</p>
                   <p>{item.main.temp}°C</p>
-                  <p>{item.weather[0].description}</p>
+                  <p>{item.weather[0].description}{getEmojiForWeather(item.weather[0].description)}</p>
                 </div>
               ))}
             </div>
